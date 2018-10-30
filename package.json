@@ -1,15 +1,19 @@
 {
   "name": "react-canvas",
-  "version": "1.3.0",
+  "version": "1.6.2",
   "description": "High performance <canvas> rendering for React components",
-  "main": "lib/ReactCanvas.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Flipboard/react-canvas.git"
+    "url": "https://github.com/gfodor/react-canvas.git"
   },
   "scripts": {
-    "start": "./node_modules/.bin/gulp",
-    "test": "./node_modules/.bin/jest"
+    "build": "rimraf dist && babel src --out-dir dist",
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook -c .storybook",
+    "prepare": "yarn build",
+    "prettier": "prettier src/**/* --write",
+    "lint": "eslint src/**/*"
   },
   "keywords": [
     "react",
@@ -17,32 +21,43 @@
   ],
   "author": "Michael Johnston <mj@flipboard.com>",
   "license": "BSD-3-Clause",
-  "homepage": "https://github.com/Flipboard/react-canvas",
+  "homepage": "https://github.com/gfodor/react-canvas",
   "bugs": {
-    "url": "https://github.com/Flipboard/react-canvas/issues"
+    "url": "https://github.com/gfodor/react-canvas/issues"
   },
   "devDependencies": {
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-react": "^6.22.0",
-    "brfs": "^1.4.3",
-    "del": "^2.2.2",
-    "envify": "^4.0.0",
-    "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0",
-    "jest": "^18.1.0",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0",
-    "transform-loader": "^0.2.3",
-    "webpack": "^1.14.0",
-    "webpack-stream": "^3.2.0"
+    "@storybook/react": "^3.4.5",
+    "alea": "^0.0.9",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "d3-scale": "^1.0.6",
+    "eslint": "^4.1.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.8.2",
+    "lodash.range": "^3.2.0",
+    "prettier": "^1.12.1",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "rimraf": "^2.6.2"
   },
   "peerDependencies": {
-    "react": "^15.0.0"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "dependencies": {
-    "fbjs": "^0.8.8",
-    "linebreak": "^0.3.0",
-    "scroller": "git://github.com/mjohnston/scroller"
+    "@craigmorton/linebreak": "^0.4.5",
+    "css-layout": "^1.1.1",
+    "fbjs": "^1.0.0",
+    "multi-key-cache": "^1.0.2",
+    "prop-types": "^15.6.1",
+    "react-reconciler": "^0.16.0",
+    "scheduler": "^0.10.0",
+    "scroller": "https://github.com/mjohnston/scroller"
   }
 }

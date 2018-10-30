@@ -1,4 +1,6 @@
-build
 node_modules
-yarn.lock
 npm-debug.log
+.idea
+storybook-static
+dist
+yarn-error.log

@@ -1,5 +1,15 @@
 # react-canvas
 
+This is a fork of [Flipboard/react-canvas](https://github.com/Flipboard/react-canvas) which:
+- Upgrades to React 16 and uses a custom renderer with `react-reconciler`
+- Converts to ES modules and modern ES6+
+- Storybook for ease of testing examples
+- Removes the need to use [brfs](https://github.com/substack/brfs) and `transform-loader` when using webpack.
+
+This fork builds upon work by [CraigMorton](https://github.com/CraigMorton/react-canvas) and [CSBerger](https://github.com/CSberger/react-canvas)
+
+# Original repo's README
+
 [Introductory blog post](http://engineering.flipboard.com/2015/02/mobile-web)
 
 React Canvas adds the ability for React components to render to `<canvas>` rather than DOM.
